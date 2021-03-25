@@ -1,5 +1,6 @@
 // Add your code here
 function submitData(userName, userEmail) {
+
     return fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
@@ -19,12 +20,16 @@ function submitData(userName, userEmail) {
         // console.log(object.id)
         const body = document.body
         const li = document.createElement('li')
-        li.innerText = `${object.id}`
+        li.innerHTML = `${object.id}`
         body.append(li)
     })
     .catch(function(error) {
-        alert("Error!")
-        console.log(error.message)
+        // alert("Error!")
+        // console.log(error.message)
+        const body = document.body
+        const li = document.createElement('li')
+        li.innerHTML = `${error.message}`
+        body.append(li)
     })
 
 }
